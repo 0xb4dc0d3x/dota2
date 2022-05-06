@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+/x64/Release
+/dota2/x64/Release
+/.vs/dota2/v17
