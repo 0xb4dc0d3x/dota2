@@ -1,34 +1,55 @@
 #include "Dota2.h"
 
 void DrawMenu() {
-	std::cout << "[DotaTwo sv_cheats patcher]" << std::endl;
+	std::cout << "[Dota 2 Patcher]" << std::endl;
 	std::cout << "\n[Enter number]" << std::endl;
-	std::cout << "[1] Patch sv_cheats" << std::endl;
-	std::cout << "[2] Revert Patch" << std::endl;
-	std::cout << "\nNOTE: You need to patch after almost every update of the game client!" << std::endl;
-	std::cout << "\n-=-Improved by 0xb4dc0d3x-=-" << std::endl;
-	std::cout << "\n|> ";
+	std::cout << "[1] Patch All" << std::endl;
+	std::cout << "[2] Unlock Dota Plus" << std::endl;
+	std::cout << "[3] Patch sv_cheats" << std::endl;
+	//std::cout << "[4] Patch Gameinfo" << std::endl;
+	std::cout << "[5] Revert Patches" << std::endl;
+	std::cout << "\n>> ";
 
 	int USER_INPUT;
 	std::cin >> USER_INPUT;
 
-	if (USER_INPUT == 1)
-	{
+	switch (USER_INPUT) {
+	case 1:
+		if (Patcher::patch_dota_plus(false))
+			std::cout << "[+] Dota Plus Unlocked" << std::endl;
 		if (Patcher::patch_sv_cheats(false))
 			std::cout << "[+] Sv_cheats Patched" << std::endl;
-	}
-	else if (USER_INPUT == 2)
-	{
+		//if (Patcher::patch_gameinfo(false))
+			//std::cout << "[+] Gameinfo Patched" << std::endl;
+		break;
+	case 2:
+		if (Patcher::patch_dota_plus(false))
+			std::cout << "[+] Dota Plus Unlocked" << std::endl;
+		break;
+	case 3:
+		if (Patcher::patch_sv_cheats(false))
+			std::cout << "[+] Sv_cheats Patched" << std::endl;
+		break;
+	//case 4:
+		//if (Patcher::patch_gameinfo(false))
+			//std::cout << "[+] Gameinfo Patched" << std::endl;
+		//break;
+	case 5:
+		if (Patcher::patch_dota_plus(true))
+			std::cout << "[+] Dota Plus Reverted" << std::endl;
 		if (Patcher::patch_sv_cheats(true))
 			std::cout << "[+] Sv_cheats Reverted" << std::endl;
-	}
-	else
-	{
+		//if (Patcher::patch_gameinfo(true))
+			//std::cout << "[+] Gameinfo Reverted" << std::endl;
+		break;
+	default:
 		DrawMenu();
+		break;
 	}
 }
 
 int main() {
+
 	if (!Paths::get_dota_path(&Globals::dota_path)) {
 		system("pause");
 		return 0;

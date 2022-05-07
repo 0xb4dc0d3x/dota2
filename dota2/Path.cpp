@@ -9,7 +9,7 @@ bool Paths::get_dota_path_from_reg(std::string* path) {
         return false;
     }
 
-    char dota_path_reg[261]{};
+    char dota_path_reg[MAX_PATH]{};
     dota_path_reg[0] = '"';
     DWORD dota_path_size = sizeof(dota_path_reg) - sizeof(char);
 
