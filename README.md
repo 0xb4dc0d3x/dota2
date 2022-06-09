@@ -5,6 +5,15 @@
 
 **NOTICE: You need to patch after almost every update of the game client!**
 
+## Auto Accept Founded Match
+vpk-mod to automatically accept founded match.
+### How To:
+* Download [pak01_dir.vpk](https://github.com/0xb4dc0d3x/dota2/raw/master/pak01_dir.vpk)
+* Create `\dota 2 beta\game\auto_accept\` folder
+* Put pak01_dir.vpk to `auto_accept` folder
+* Add `Game auto_accept` & `Mod auto_accept` to gameinfo.gi
+
+
 ## sv_cheats unlock
 Allows you to use any cheat-protected commands in multiplayer (ex: `dota_camera_distance 1500`)
 
